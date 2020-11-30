@@ -1,49 +1,58 @@
 const puppeteer = require('puppeteer');
-const { User, Link } = require('./data');
+
+const User = require('./data');
+
+const user = User.user;
+const pass = User.password;
+
 
 let i = true;
 let j = true;
 
 (async () =>{
 
+
     const browser = await puppeteer.launch({executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', headless: false});
 
     const page = await browser.newPage();
-    await page.goto(Link.login);
+    await page.goto(User.login);
 
-
-    await page.evaluate(() => {
+    await page.waitForSelector('button#btn-login');
+    let t = true;
+    
+    await page.evaluate(( {user, pass} ) => { 
+        console.log(pass)
         const login = document.querySelector('.form-control#coAcesso');
         const password = document.querySelector('.form-control#coSenha');
         const buttonL = document.querySelector('#btn-login');
         const buttonC = document.querySelector('#btnAceitarPoliticasCookies');
         buttonC.click();
-        login.value = la;
-        password.value = li;
+        login.value = user;
+        password.value = pass;
         buttonL.click();
-    })
+    }, { user, pass })
 
     await page.waitForNavigation();
     
-    await page.goto(Link.turm);
+    await page.goto(User.turm);
 
-    await page.type('[type="email"]', User.user);
+    await page.type('[type="email"]', user, {delay: 100});
         await page.click('[jscontroller="soHxf"]');
     
         await page.waitForNavigation();
-    
-        await page.evaluate(() =>{
+
+        await page.evaluate(({ pass }) =>{
     
             setTimeout(() =>{
                 console.log('cheguei');
                 const log = document.querySelector('.whsOnd.zHQkBf');
                 const enter = document.querySelector('[jscontroller="soHxf"]');
-                log.value = User.password;
+                log.value = pass;
     
                 enter.click();
             }, 1000);
     
-        })
+        }, { pass })
         console.log('aq2');
     
         await page.waitForNavigation();
@@ -99,7 +108,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
         }
         else if(week === 'Segunda' && hour === 21 && min === 00){
@@ -139,7 +148,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
         }
             
@@ -180,7 +189,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
         }
     
@@ -220,7 +229,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
         }
             
@@ -264,7 +273,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
         }
     
@@ -305,7 +314,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
         }
             
@@ -346,7 +355,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
             }
             
@@ -391,13 +400,13 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
 
             }
     
             else if(week === 'Sexta' && hour === 19 && min === 10){
-                await page.goto(User.adm);
+                await page.goto(User.Adm);
                 await page.evaluate(() =>{
                     console.log('Materia 1'); 
                     const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
@@ -436,7 +445,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
 
     
@@ -479,7 +488,7 @@ let j = true;
                 }
 
                 if(wait === false){
-                    page.goto(Link.turm);
+                    page.goto(User.turm);
                 }
 
             }
