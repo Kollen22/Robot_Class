@@ -12,10 +12,12 @@ let j = true;
 (async () =>{
 
 
-    const browser = await puppeteer.launch({executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', headless: false});
+    const browser = await puppeteer.launch({executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', headless: false,});
 
     const page = await browser.newPage();
     await page.goto(User.login);
+    const context = browser.defaultBrowserContext();
+    await context.overridePermissions(User.IntC2, ['microphone']);
 
     await page.waitForSelector('button#btn-login');
     let t = true;
@@ -68,274 +70,258 @@ let j = true;
         const date = new Date;
         const hour = date.getHours();
         const min = date.getMinutes();
-        week = week[ date.getDay() ];
+        week = week[ date.getDay() -1];
     
     
         if(week === 'Segunda' && hour === 19 && min === 10){
+            let wait = true;
             await page.goto(User.IntC1);
-    
+
+            await page.waitForTimeout(6000);
+
             await page.evaluate(() =>{
-                console.log('cheguei');
-                
-                const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-                dis.click();
-    
-                setTimeout(() =>{
-                    enter.click();
-                }, 2000);
-            })
-    
-                await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                const mute = document.querySelector('div.I5fjHe');
+                const enter = document.querySelector('span.NPEfkd');
+                mute.click();
+                enter.click();
+            });
 
-                back: while(wait){
-                    const dat1 = new Date;
-                    const Hour = dat1.getHours();
-                    const Min = dat1.getMinutes();
-                    const View = await page.evaluate(() =>{
-                        const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
-                        return  view;
-                    });
+            await page.waitForTimeout(6000);
 
-                    if(Hour >= 20 && Min >= 00){
-                        if(View <=5){
-                            i = false
-                            wait = false;
-                        }
-                    }else{
-                        continue back;
+           back: while(wait){
+                const dat1 = new Date;
+                const Hour = dat1.getHours();
+                const Min = dat1.getMinutes();
+                const View = await page.evaluate(() =>{
+                    const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
+                    return  view;
+                });
+
+                if(Hour >= 20 && Min >= 00){
+                    if(View <=5){
+                        i = false
+                        wait = false;
                     }
+                }else{
+                    continue back;
                 }
+            }
 
-                if(wait === false){
-                    page.goto(User.turm);
-                }
+            if(wait === false){
+                page.goto(User.turm);
+            }
         }
         else if(week === 'Segunda' && hour === 21 && min === 00){
+            let wait = true;
             await page.goto(User.Mat);
-    
+
+            await page.waitForTimeout(6000);
+
             await page.evaluate(() =>{
-                console.log('cheguei');
-                
-                const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-                dis.click();
-    
-                setTimeout(() =>{
-                    enter.click();
-                }, 2000);
-            })
+                const mute = document.querySelector('div.I5fjHe');
+                const enter = document.querySelector('span.NPEfkd');
+                mute.click();
+                enter.click();
+            });
 
-            await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+            await page.waitForTimeout(6000);
 
-                back: while(wait){
-                    const dat1 = new Date;
-                    const Hour = dat1.getHours();
-                    const Min = dat1.getMinutes();
-                    const View = await page.evaluate(() =>{
-                        const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
-                        return  view;
-                    });
+           back: while(wait){
+                const dat1 = new Date;
+                const Hour = dat1.getHours();
+                const Min = dat1.getMinutes();
+                const View = await page.evaluate(() =>{
+                    const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
+                    return  view;
+                });
 
-                    if(Hour >= 20 && Min >= 00){
-                        if(View <=5){
-                            i = false
-                            wait = false;
-                        }
-                    }else{
-                        continue back;
+                if(Hour >= 22 && Min >= 00){
+                    if(View <=5){
+                        i = false
+                        wait = false;
                     }
+                }else{
+                    continue back;
                 }
+            }
 
-                if(wait === false){
-                    page.goto(User.turm);
-                }
+            if(wait === false){
+                page.goto(User.turm);
+            }
         }
             
         else if(week === 'Terca' && hour === 19 && min === 10){
+            let wait = true;
             await page.goto(User.Sis);
-    
+
+            await page.waitForTimeout(6000);
+
             await page.evaluate(() =>{
-                console.log('cheguei');
-                
-                const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-                dis.click();
-    
-                setTimeout(() =>{
-                    enter.click();
-                }, 2000);
-            })
-            
-            await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                const mute = document.querySelector('div.I5fjHe');
+                const enter = document.querySelector('span.NPEfkd');
+                mute.click();
+                enter.click();
+            });
 
-                back: while(wait){
-                    const dat1 = new Date;
-                    const Hour = dat1.getHours();
-                    const Min = dat1.getMinutes();
-                    const View = await page.evaluate(() =>{
-                        const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
-                        return  view;
-                    });
+            await page.waitForTimeout(6000);
 
-                    if(Hour >= 20 && Min >= 00){
-                        if(View <=5){
-                            i = false
-                            wait = false;
-                        }
-                    }else{
-                        continue back;
+           back: while(wait){
+                const dat1 = new Date;
+                const Hour = dat1.getHours();
+                const Min = dat1.getMinutes();
+                const View = await page.evaluate(() =>{
+                    const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
+                    return  view;
+                });
+
+                if(Hour >= 20 && Min >= 00){
+                    if(View <=5){
+                        i = false
+                        wait = false;
                     }
+                }else{
+                    continue back;
                 }
+            }
 
-                if(wait === false){
-                    page.goto(User.turm);
-                }
+            if(wait === false){
+                page.goto(User.turm);
+            }
         }
     
         else if(week === 'Terca' && hour === 21 && min === 00){
+            let wait = true;
             await page.goto(User.Log);
-    
+
+            await page.waitForTimeout(6000);
+
             await page.evaluate(() =>{
-                console.log('cheguei');
-                
-                const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-                dis.click();
-    
-                setTimeout(() =>{
-                    enter.click();
-                }, 2000);
-            })
-            await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                const mute = document.querySelector('div.I5fjHe');
+                const enter = document.querySelector('span.NPEfkd');
+                mute.click();
+                enter.click();
+            });
 
-                back: while(wait){
-                    const dat1 = new Date;
-                    const Hour = dat1.getHours();
-                    const Min = dat1.getMinutes();
-                    const View = await page.evaluate(() =>{
-                        const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
-                        return  view;
-                    });
+            await page.waitForTimeout(6000);
 
-                    if(Hour >= 20 && Min >= 00){
-                        if(View <=5){
-                            i = false
-                            wait = false;
-                        }
-                    }else{
-                        continue back;
+           back: while(wait){
+                const dat1 = new Date;
+                const Hour = dat1.getHours();
+                const Min = dat1.getMinutes();
+                const View = await page.evaluate(() =>{
+                    const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
+                    return  view;
+                });
+
+                if(Hour >= 22 && Min >= 00){
+                    if(View <=5){
+                        i = false
+                        wait = false;
                     }
+                }else{
+                    continue back;
                 }
+            }
 
-                if(wait === false){
-                    page.goto(User.turm);
-                }
+            if(wait === false){
+                page.goto(User.turm);
+            }
         }
             
         else if(week === 'Quarta' && hour === 19 && min === 10){
+            let wait = true;
             await page.goto(User.Mat);
+
+            await page.waitForTimeout(6000);
+
             await page.evaluate(() =>{
-                console.log('Materia 1'); 
-                const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
+                const mute = document.querySelector('div.I5fjHe');
+                const enter = document.querySelector('span.NPEfkd');
+                mute.click();
+                enter.click();
+            });
 
-                setTimeout(() =>{
-                    enter.click();
-                }, 2000);
+            await page.waitForTimeout(6000);
 
-                setTimeout(() =>{
-                    document.querySelector('[class="RveJvd snByac"]').click();
-                    console.log('Olá');
-                }, 5000);
-                
-            })
-    
-                await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+           back: while(wait){
+                const dat1 = new Date;
+                const Hour = dat1.getHours();
+                const Min = dat1.getMinutes();
+                const View = await page.evaluate(() =>{
+                    const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
+                    return  view;
+                });
 
-                back: while(wait){
-                    const dat1 = new Date;
-                    const Hour = dat1.getHours();
-                    const Min = dat1.getMinutes();
-                    const View = await page.evaluate(() =>{
-                        const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
-                        return  view;
-                    });
-
-                    if(Hour >= 20 && Min >= 00){
-                        if(View <=5){
-                            i = false
-                            wait = false;
-                        }
-                    }else{
-                        continue back;
+                if(Hour >= 20 && Min >= 00){
+                    if(View <=5){
+                        i = false
+                        wait = false;
                     }
+                }else{
+                    continue back;
                 }
+            }
 
-                if(wait === false){
-                    page.goto(User.turm);
-                }
+            if(wait === false){
+                page.goto(User.turm);
+            }
         }
     
         else if(week === 'Quarta' && hour === 21 && min === 00){
+            let wait = true;
             await page.goto(User.Adm);
-    
+
+            await page.waitForTimeout(6000);
+
             await page.evaluate(() =>{
-                console.log('cheguei');
-                
-                const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-                dis.click();
-    
-                setTimeout(() =>{
-                    enter.click();
-                }, 2000);
-            })
-    
-            await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                const mute = document.querySelector('div.I5fjHe');
+                const enter = document.querySelector('span.NPEfkd');
+                mute.click();
+                enter.click();
+            });
 
-                back: while(wait){
-                    const dat1 = new Date;
-                    const Hour = dat1.getHours();
-                    const Min = dat1.getMinutes();
-                    const View = await page.evaluate(() =>{
-                        const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
-                        return  view;
-                    });
+            await page.waitForTimeout(6000);
 
-                    if(Hour >= 20 && Min >= 00){
-                        if(View <=5){
-                            i = false
-                            wait = false;
-                        }
-                    }else{
-                        continue back;
+           back: while(wait){
+                const dat1 = new Date;
+                const Hour = dat1.getHours();
+                const Min = dat1.getMinutes();
+                const View = await page.evaluate(() =>{
+                    const view = document.querySelector('[class="wnPUne N0PJ8e"]').innerHTML;
+                    return  view;
+                });
+
+                if(Hour >= 22 && Min >= 00){
+                    if(View <=5){
+                        i = false
+                        wait = false;
                     }
+                }else{
+                    continue back;
                 }
+            }
 
-                if(wait === false){
-                    page.goto(User.turm);
-                }
+            if(wait === false){
+                page.goto(User.turm);
+            }
         }
             
             else if(week === 'Quinta' && hour === 19 && min === 10){
+                let wait = true;
                 await page.goto(User.Log);
-    
+
+                await page.waitForTimeout(6000);
+
                 await page.evaluate(() =>{
-                    console.log('cheguei');
-                    
-                    const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-                    dis.click();
-    
-                    setTimeout(() =>{
-                        enter.click();
-                    }, 2000);
-                })
+                    const mute = document.querySelector('div.I5fjHe');
+                    const enter = document.querySelector('span.NPEfkd');
+                    mute.click();
+                    enter.click();
+                });
 
-                await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                await page.waitForTimeout(6000);
 
-                back: while(wait){
+               back: while(wait){
                     const dat1 = new Date;
                     const Hour = dat1.getHours();
                     const Min = dat1.getMinutes();
@@ -360,25 +346,19 @@ let j = true;
             }
             
             else if(week === 'Quinta' && hour === 21 && min === 00){
-                await page.goto(User.Adm);
-    
+                let wait = true;
+                await page.goto(User.Sis);
+
+                await page.waitForTimeout(6000);
+
                 await page.evaluate(() =>{
-                    console.log('Materia 1'); 
-                    const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-    
-                    setTimeout(() =>{
-                        enter.click();
-                    }, 2000);
+                    const mute = document.querySelector('div.I5fjHe');
+                    const enter = document.querySelector('span.NPEfkd');
+                    mute.click();
+                    enter.click();
+                });
 
-                    setTimeout(() =>{
-                        document.querySelector('[class="RveJvd snByac"]').click();
-                        console.log('Olá');
-                    }, 5000);
-                    
-                })
-
-                await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                await page.waitForTimeout(6000);
 
                back: while(wait){
                     const dat1 = new Date;
@@ -389,7 +369,7 @@ let j = true;
                         return  view;
                     });
 
-                    if(Hour >= 20 && Min >= 00){
+                    if(Hour >= 22 && Min >= 00){
                         if(View <=5){
                             i = false
                             wait = false;
@@ -406,24 +386,19 @@ let j = true;
             }
     
             else if(week === 'Sexta' && hour === 19 && min === 10){
+                let wait = true;
                 await page.goto(User.Adm);
+
+                await page.waitForTimeout(6000);
+
                 await page.evaluate(() =>{
-                    console.log('Materia 1'); 
-                    const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-    
-                    setTimeout(() =>{
-                        enter.click();
-                    }, 2000);
+                    const mute = document.querySelector('div.I5fjHe');
+                    const enter = document.querySelector('span.NPEfkd');
+                    mute.click();
+                    enter.click();
+                });
 
-                    setTimeout(() =>{
-                        document.querySelector('[class="RveJvd snByac"]').click();
-                        console.log('Olá');
-                    }, 5000);
-                    
-                })
-
-                await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
+                await page.waitForTimeout(6000);
 
                back: while(wait){
                     const dat1 = new Date;
@@ -454,21 +429,19 @@ let j = true;
             else if(week === 'Sexta' && hour === 21 && min === 00){
                 let wait = true;
                 await page.goto(User.IntC2);
-    
-                await page.evaluate(() =>{
-                    console.log('Materia 2');
-                    
-                    const enter = document.querySelector('.NPEfkd.RveJvd.snByac');
-    
-                    setTimeout(() =>{
-                        enter.click();
-                    }, 2000);
-                })
-                
-                await page.waitForSelector('span.N0PJ8e')
-                await page.keyboard.press('Escape');
 
-                back: while(wait){
+                await page.waitForTimeout(6000);
+
+                await page.evaluate(() =>{
+                    const mute = document.querySelector('div.I5fjHe');
+                    const enter = document.querySelector('span.NPEfkd');
+                    mute.click();
+                    enter.click();
+                });
+
+                await page.waitForTimeout(6000);
+
+               back: while(wait){
                     const dat1 = new Date;
                     const Hour = dat1.getHours();
                     const Min = dat1.getMinutes();
@@ -477,7 +450,7 @@ let j = true;
                         return  view;
                     });
 
-                    if(Hour >= 20 && Min >= 00){
+                    if(Hour >= 22 && Min >= 00){
                         if(View <=5){
                             i = false
                             wait = false;
