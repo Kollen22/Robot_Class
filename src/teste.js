@@ -73,20 +73,20 @@ let j = true;
         week = week[ date.getDay() -1];
     
     
-        if(week === 'Segunda' && hour === 19 && min === 10){
+        if(week === 'Segunda' && hour === 19 && min === 16){
             let wait = true;
             await page.goto(User.IntC1);
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
+            await page.click('[class="DPvwYc JnDFsc dMzo5"]');
             await page.evaluate(() =>{
-                const mute = document.querySelector('div.I5fjHe');
                 const enter = document.querySelector('span.NPEfkd');
-                mute.click();
                 enter.click();
             });
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
+
 
            back: while(wait){
                 const dat1 = new Date;
@@ -111,20 +111,20 @@ let j = true;
                 page.goto(User.turm);
             }
         }
-        else if(week === 'Segunda' && hour === 21 && min === 00){
+        else if(week === 'Segunda' && hour === 21 && min === 10){
             let wait = true;
             await page.goto(User.Mat);
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
+            await page.click('[class="DPvwYc JnDFsc dMzo5"]');
             await page.evaluate(() =>{
-                const mute = document.querySelector('div.I5fjHe');
                 const enter = document.querySelector('span.NPEfkd');
-                mute.click();
                 enter.click();
             });
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
+
 
            back: while(wait){
                 const dat1 = new Date;
@@ -150,20 +150,19 @@ let j = true;
             }
         }
             
-        else if(week === 'Terca' && hour === 19 && min === 10){
+        else if(week === 'Terca' && hour === 19 && min === 16){
             let wait = true;
             await page.goto(User.Sis);
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
+            await page.click('[class="DPvwYc JnDFsc dMzo5"]');
             await page.evaluate(() =>{
-                const mute = document.querySelector('div.I5fjHe');
                 const enter = document.querySelector('span.NPEfkd');
-                mute.click();
                 enter.click();
             });
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
            back: while(wait){
                 const dat1 = new Date;
@@ -189,20 +188,19 @@ let j = true;
             }
         }
     
-        else if(week === 'Terca' && hour === 21 && min === 00){
+        else if(week === 'Terca' && hour === 21 && min === 10){
             let wait = true;
             await page.goto(User.Log);
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
+            await page.click('[class="DPvwYc JnDFsc dMzo5"]');
             await page.evaluate(() =>{
-                const mute = document.querySelector('div.I5fjHe');
                 const enter = document.querySelector('span.NPEfkd');
-                mute.click();
                 enter.click();
             });
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
            back: while(wait){
                 const dat1 = new Date;
@@ -228,20 +226,19 @@ let j = true;
             }
         }
             
-        else if(week === 'Quarta' && hour === 19 && min === 10){
+        else if(week === 'Quarta' && hour === 19 && min === 16){
             let wait = true;
             await page.goto(User.Mat);
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
+            await page.click('[class="DPvwYc JnDFsc dMzo5"]');
             await page.evaluate(() =>{
-                const mute = document.querySelector('div.I5fjHe');
                 const enter = document.querySelector('span.NPEfkd');
-                mute.click();
                 enter.click();
             });
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
            back: while(wait){
                 const dat1 = new Date;
@@ -267,20 +264,19 @@ let j = true;
             }
         }
     
-        else if(week === 'Quarta' && hour === 21 && min === 00){
+        else if(week === 'Quarta' && hour === 21 && min === 10){
             let wait = true;
             await page.goto(User.Adm);
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
+            await page.click('[class="DPvwYc JnDFsc dMzo5"]');
             await page.evaluate(() =>{
-                const mute = document.querySelector('div.I5fjHe');
                 const enter = document.querySelector('span.NPEfkd');
-                mute.click();
                 enter.click();
             });
 
-            await page.waitForTimeout(6000);
+            await page.waitForTimeout(5000);
 
            back: while(wait){
                 const dat1 = new Date;
@@ -306,20 +302,19 @@ let j = true;
             }
         }
             
-            else if(week === 'Quinta' && hour === 19 && min === 10){
+            else if(week === 'Quinta' && hour === 19 && min === 16){
                 let wait = true;
                 await page.goto(User.Log);
 
-                await page.waitForTimeout(6000);
+                await page.waitForTimeout(5000);
 
+                await page.click('[class="DPvwYc JnDFsc dMzo5"]');
                 await page.evaluate(() =>{
-                    const mute = document.querySelector('div.I5fjHe');
                     const enter = document.querySelector('span.NPEfkd');
-                    mute.click();
                     enter.click();
                 });
-
-                await page.waitForTimeout(6000);
+    
+                await page.waitForTimeout(5000);
 
                back: while(wait){
                     const dat1 = new Date;
@@ -345,20 +340,19 @@ let j = true;
                 }
             }
             
-            else if(week === 'Quinta' && hour === 21 && min === 00){
+            else if(week === 'Quinta' && hour === 21 && min === 10){
                 let wait = true;
                 await page.goto(User.Sis);
 
-                await page.waitForTimeout(6000);
+                await page.waitForTimeout(5000);
 
+                await page.click('[class="DPvwYc JnDFsc dMzo5"]');
                 await page.evaluate(() =>{
-                    const mute = document.querySelector('div.I5fjHe');
                     const enter = document.querySelector('span.NPEfkd');
-                    mute.click();
                     enter.click();
                 });
-
-                await page.waitForTimeout(6000);
+    
+                await page.waitForTimeout(5000);
 
                back: while(wait){
                     const dat1 = new Date;
@@ -385,20 +379,19 @@ let j = true;
 
             }
     
-            else if(week === 'Sexta' && hour === 19 && min === 10){
+            else if(week === 'Sexta' && hour === 19 && min === 16){
                 let wait = true;
                 await page.goto(User.Adm);
 
-                await page.waitForTimeout(6000);
+                await page.waitForTimeout(5000);
 
+                await page.click('[class="DPvwYc JnDFsc dMzo5"]');
                 await page.evaluate(() =>{
-                    const mute = document.querySelector('div.I5fjHe');
                     const enter = document.querySelector('span.NPEfkd');
-                    mute.click();
                     enter.click();
                 });
-
-                await page.waitForTimeout(6000);
+    
+                await page.waitForTimeout(5000);
 
                back: while(wait){
                     const dat1 = new Date;
@@ -426,21 +419,19 @@ let j = true;
     
             }
     
-            else if(week === 'Sexta' && hour === 21 && min === 00){
+            else if(week === 'Sexta' && hour === 21 && min === 10){
                 let wait = true;
                 await page.goto(User.IntC2);
 
-                await page.waitForTimeout(6000);
+                await page.waitForTimeout(5000);
 
+                await page.click('[class="DPvwYc JnDFsc dMzo5"]');
                 await page.evaluate(() =>{
-                    const mute = document.querySelector('div.I5fjHe');
                     const enter = document.querySelector('span.NPEfkd');
-                    mute.click();
                     enter.click();
                 });
-
-                await page.waitForTimeout(6000);
-
+    
+                await page.waitForTimeout(5000);
                back: while(wait){
                     const dat1 = new Date;
                     const Hour = dat1.getHours();
